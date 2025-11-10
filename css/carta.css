@@ -1,0 +1,170 @@
+/* --- RESET GENERAL --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #101010;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* --- HEADER --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header .logo h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Menú de navegación */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+    border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 30px;
+  background-color: rgba(62, 61, 61, 0.671);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #12a70a;
+  color: #ffffff;
+  border-color: #117d2c;
+}
+/* Carta */
+.carta {
+  margin-top: 120px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.carta h1 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+/* Platos estilo carta */
+.plato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.plato .detalle {
+  flex: 1;
+  text-align: right;
+  max-width: 400px;
+}
+
+.plato .detalle h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ef8737;
+}
+
+.plato .detalle p {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.plato .imagen {
+  flex-shrink: 0;
+}
+
+.plato .imagen img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #452610;
+}
+
+.plato .precio {
+  flex: 1;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+  max-width: 200px;
+}
+
+/* Alternar lados */
+.plato:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.plato:nth-child(even) .detalle {
+  text-align: left;
+}
+
+.plato:nth-child(even) .precio {
+  text-align: right;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  font-size: 14px;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  header { padding: 15px 30px; }
+  .hero h1 { font-size: clamp(28px, 8vw, 80px); }
+  .pizza-images img { width: clamp(60px, 10vw, 120px); }
+  .side-text p { font-size: clamp(15px, 1.8vw, 18px); }
+}
+
+/* Laptops y pantallas medianas */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 10px; }
+  header nav { position: static; transform: none; }
+  .hero h1 { font-size: clamp(24px, 8vw, 60px); }
+  .pizza-images img { width: clamp(50px, 8vw, 100px); }
+  .side-text p { font-size: clamp(14px, 1.5vw, 16px); }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .hero h1 { font-size: clamp(20px, 10vw, 40px); }
+  .pizza-images { gap: 10px; }
+  .pizza-images img { width: clamp(40px, 20vw, 80px); position: relative; top: 0; left: 0; }
+  .side-text { width: 90%; }
+  .buttons .btn { padding: 8px 16px; font-size: 14px; }
+  .decorations img { width: clamp(20px, 15vw, 40px); }
+}
